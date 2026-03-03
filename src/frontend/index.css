@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* DislexiaEdu — warm sage + forest palette */
+    --background: 0.97 0.01 95;
+    --foreground: 0.2 0.02 50;
+    --card: 0.99 0.005 90;
+    --card-foreground: 0.2 0.02 50;
+    --popover: 0.99 0.005 90;
+    --popover-foreground: 0.2 0.02 50;
+    --primary: 0.38 0.09 155;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.91 0.03 140;
+    --secondary-foreground: 0.25 0.06 155;
+    --muted: 0.93 0.015 100;
+    --muted-foreground: 0.5 0.015 80;
+    --accent: 0.88 0.06 140;
+    --accent-foreground: 0.25 0.06 155;
+    --destructive: 0.55 0.2 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.87 0.025 130;
+    --input: 0.89 0.025 130;
+    --ring: 0.38 0.09 155;
+
+    /* Charts */
+    --chart-1: 0.6 0.14 155;
+    --chart-2: 0.65 0.12 200;
+    --chart-3: 0.7 0.13 90;
+    --chart-4: 0.65 0.15 40;
+    --chart-5: 0.6 0.1 260;
+
+    /* Sidebar */
+    --sidebar: 0.25 0.04 155;
+    --sidebar-foreground: 0.95 0.01 140;
+    --sidebar-primary: 0.75 0.12 140;
+    --sidebar-primary-foreground: 0.15 0.04 155;
+    --sidebar-accent: 0.32 0.05 155;
+    --sidebar-accent-foreground: 0.92 0.01 140;
+    --sidebar-border: 0.32 0.04 155;
+    --sidebar-ring: 0.6 0.1 140;
+
+    /* Accessibility / user profile overrides */
+    --app-font-size: 1rem;
+    --app-letter-spacing: 0.02em;
+    --app-line-height: 1.6;
+    --app-font-family: "Figtree", "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 0.16 0.02 155;
+    --foreground: 0.95 0.015 100;
+    --card: 0.2 0.025 155;
+    --card-foreground: 0.95 0.015 100;
+    --popover: 0.22 0.025 155;
+    --popover-foreground: 0.95 0.015 100;
+    --primary: 0.72 0.12 140;
+    --primary-foreground: 0.15 0.04 155;
+    --secondary: 0.26 0.04 155;
+    --secondary-foreground: 0.92 0.01 140;
+    --muted: 0.24 0.03 155;
+    --muted-foreground: 0.65 0.025 140;
+    --accent: 0.3 0.05 155;
+    --accent-foreground: 0.92 0.01 140;
+    --destructive: 0.65 0.2 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.28 0.035 155;
+    --input: 0.28 0.035 155;
+    --ring: 0.72 0.12 140;
+    --chart-1: 0.72 0.14 155;
+    --chart-2: 0.65 0.12 200;
+    --chart-3: 0.7 0.13 90;
+    --chart-4: 0.65 0.15 40;
+    --chart-5: 0.6 0.1 260;
+    --sidebar: 0.18 0.025 155;
+    --sidebar-foreground: 0.92 0.01 140;
+    --sidebar-primary: 0.72 0.12 140;
+    --sidebar-primary-foreground: 0.15 0.04 155;
+    --sidebar-accent: 0.24 0.035 155;
+    --sidebar-accent-foreground: 0.9 0.01 140;
+    --sidebar-border: 0.26 0.035 155;
+    --sidebar-ring: 0.6 0.1 140;
+  }
+
+  /* High contrast mode */
+  html.high-contrast {
+    --background: 1 0 0;
+    --foreground: 0 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0 0 0;
+    --primary: 0.15 0.18 155;
+    --primary-foreground: 1 0 0;
+    --border: 0.3 0 0;
+    --muted: 0.92 0 0;
+    --muted-foreground: 0.2 0 0;
+    --sidebar: 0.1 0.04 155;
+    --sidebar-foreground: 1 0 0;
+    --sidebar-accent: 0.18 0.05 155;
+    --sidebar-accent-foreground: 1 0 0;
+  }
+
+  html.high-contrast.dark {
+    --background: 0 0 0;
+    --foreground: 1 0 0;
+    --card: 0.08 0 0;
+    --card-foreground: 1 0 0;
+    --primary: 0.8 0.15 140;
+    --primary-foreground: 0 0 0;
+    --border: 0.5 0 0;
+    --muted: 0.12 0 0;
+    --muted-foreground: 0.85 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--app-font-family);
+    font-size: var(--app-font-size);
+    letter-spacing: var(--app-letter-spacing);
+    line-height: var(--app-line-height);
+  }
+
+  /* Dyslexia-friendly reading improvements */
+  p, li, label, span, td, th {
+    line-height: var(--app-line-height);
+    letter-spacing: var(--app-letter-spacing);
+  }
+
+  /* Focus visible ring for keyboard nav */
+  :focus-visible {
+    outline: 3px solid oklch(var(--ring));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Progress ring animation */
+  .progress-ring-circle {
+    transition: stroke-dashoffset 0.5s ease;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  /* Smooth sidebar transition */
+  .sidebar-transition {
+    transition: width 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px oklch(var(--primary) / 0.15);
+  }
+}
